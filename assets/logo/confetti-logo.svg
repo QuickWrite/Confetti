@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1000"
+   height="1000"
+   viewBox="0 0 264.58333 264.58333"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   sodipodi:docname="confetti-logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title6">Confetti Logo</title>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="0.26865156"
+     inkscape:cx="554.62175"
+     inkscape:cy="582.53895"
+     inkscape:window-width="974"
+     inkscape:window-height="1128"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g5" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect4"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,6.8675078,0,1 @ F,0,1,1,0,6.8675078,0,1 @ F,0,1,1,0,6.8675078,0,1 @ F,0,1,1,0,6.8675078,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect3"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,7.3469179,0,1 @ F,0,1,1,0,5.6327298,0,1 @ F,0,0,1,0,7.3469179,0,1 @ F,0,1,1,0,5.6327298,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,9.5908199,0,1 @ F,0,0,1,0,9.5908199,0,1 @ F,0,0,1,0,9.5908199,0,1 @ F,0,0,1,0,15.450706,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="fill:#7be495;fill-opacity:1">
+    <g
+       id="g5"
+       transform="matrix(1.1949715,0,0,1.1949715,-26.81798,-14.817282)">
+      <path
+         style="fill:#55b9b7;fill-opacity:1;stroke-width:0.700087;stroke-linejoin:round;stroke-miterlimit:67.2;stroke-dasharray:none"
+         d="m 78.625665,135.00864 -17.411775,65.676 a 5.0911787,5.0911787 42.809546 0 0 6.597951,6.11181 l 60.404989,-21.06996 c 5.00134,-1.74452 7.03249,-6.94745 4.3834,-11.53404 -2.4659,-4.26943 -5.67295,-9.60379 -9.03284,-14.60296 -4.75252,-7.07126 -14.59652,-16.89162 -21.69355,-21.60733 -4.279103,-2.84332 -8.720144,-5.50418 -12.393584,-7.61425 -4.591998,-2.6377 -9.497199,-0.47925 -10.854591,4.64073 z"
+         id="path1"
+         sodipodi:nodetypes="ccczc"
+         inkscape:path-effect="#path-effect1"
+         inkscape:original-d="m 81.08344,125.73809 -22.327325,84.2171 78.516445,-27.38744 c 0,0 -13.55267,-25.55663 -23.20523,-35.13276 -9.65257,-9.57613 -32.98389,-21.6969 -32.98389,-21.6969 z"
+         transform="matrix(1.2097511,-0.12927441,0.12927441,1.2097511,-33.415374,-22.649571)" />
+      <circle
+         style="fill:#ffc857;fill-opacity:1;stroke-width:0.493154;stroke-linejoin:round;stroke-miterlimit:67.2;stroke-dasharray:none"
+         id="path2"
+         cx="95.644707"
+         cy="95.211189"
+         r="9.736187" />
+      <circle
+         style="fill:#ffc857;fill-opacity:1;stroke-width:0.665599;stroke-linejoin:round;stroke-miterlimit:67.2;stroke-dasharray:none"
+         id="path2-4"
+         cx="207.38992"
+         cy="147.94824"
+         r="13.140708" />
+      <circle
+         style="fill:#ff6b6b;fill-opacity:1;stroke-width:0.700087;stroke-linejoin:round;stroke-miterlimit:67.2;stroke-dasharray:none"
+         id="circle3-3"
+         cx="101.28697"
+         cy="57.641682"
+         r="13.821611" />
+      <path
+         style="fill:#ffc857;fill-opacity:1;stroke-width:0.700087;stroke-linejoin:round;stroke-miterlimit:67.2;stroke-dasharray:none"
+         d="m 139.17057,58.967266 -29.4735,55.364284 a 6.4789011,6.4789011 77.025307 0 0 1.90881,8.28463 l 5.04366,3.66736 a 8.3549113,8.3549113 174.69486 0 0 10.98713,-1.02024 l 41.44122,-43.871948 a 5.2459081,5.2459081 86.331516 0 0 -0.49125,-7.662048 L 148.30875,57.134968 a 6.027723,6.027723 168.66196 0 0 -9.13818,1.832298 z"
+         id="path3"
+         inkscape:path-effect="#path-effect3"
+         inkscape:original-d="m 142.62301,52.482061 -35.57285,66.821559 15.54152,11.30059 50.3541,-53.307619 z"
+         transform="matrix(1.1216486,-0.20681673,0.19227084,1.2065049,-29.2334,-10.438447)"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         style="fill:#ff6b6b;fill-opacity:1;stroke-width:0.700087;stroke-linejoin:round;stroke-miterlimit:67.2;stroke-dasharray:none"
+         d="m 151.6628,109.8694 -34.10465,21.83893 a 7.2629542,7.2629542 103.96952 0 0 -2.40923,9.68485 l 2.06548,3.66153 a 8.2736251,8.2736251 20.878237 0 0 9.87465,3.76646 l 41.08357,-13.99884 a 5.3395909,5.3395909 109.04953 0 0 2.75166,-7.96902 l -9.72926,-14.93328 a 6.921822,6.921822 12.140816 0 0 -9.53222,-2.05063 z"
+         id="path4"
+         inkscape:path-effect="#path-effect4"
+         inkscape:original-d="m 157.44618,106.166 -45.67141,29.24573 8.81378,15.62443 54.08457,-18.42882 z"
+         transform="rotate(-8.8020534,129.3657,-56.061375)" />
+      <circle
+         style="fill:#7be495;fill-opacity:1;stroke-width:0.700087;stroke-linejoin:round;stroke-miterlimit:67.2;stroke-dasharray:none"
+         id="path5"
+         cx="171.06749"
+         cy="166.25998"
+         r="8.0125284" />
+      <circle
+         style="fill:#7be495;fill-opacity:1;stroke-width:0.700087;stroke-linejoin:round;stroke-miterlimit:67.2;stroke-dasharray:none"
+         id="path5-6"
+         cx="180.94272"
+         cy="81.499733"
+         r="8.0125284" />
+    </g>
+  </g>
+  <metadata
+     id="metadata6">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Confetti Logo</dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>QuickWrite</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:description>A confetti burst as the logo of the library called &quot;Confetti&quot;.</dc:description>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by/4.0/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by/4.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
