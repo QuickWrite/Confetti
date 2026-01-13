@@ -19,7 +19,7 @@ package net.quickwrite.confetti.exception;
  * This is an unchecked exception because it usually indicates a programming
  * error or an invalid configuration state rather than a recoverable condition.
  */
-public class InvalidNodeTypeException extends RuntimeException {
+public class InvalidNodeTypeException extends IllegalStateException {
     /**
      * Constructs a new {@code InvalidNodeTypeException} with the specified detail message.
      *
