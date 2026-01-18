@@ -73,7 +73,7 @@ public sealed interface ConfigNode permits ArrayNode, ObjectNode, ValueNode, Nul
     /**
      * Returns the object node variant without casting.
      *
-     * @throws java.security.InvalidParameterException if the node is not an {@link ObjectNode}.
+     * @throws InvalidNodeTypeException if the node is not an {@link ObjectNode}.
      * @return The {@link ObjectNode} representation of this node.
      */
     default ObjectNode toObject() {
@@ -93,7 +93,7 @@ public sealed interface ConfigNode permits ArrayNode, ObjectNode, ValueNode, Nul
      * Returns the array node variant without casting.
      *
      * @return The {@link ArrayNode} representation of this node.
-     * @throws java.security.InvalidParameterException if the node is not an {@link ArrayNode}.
+     * @throws InvalidNodeTypeException if the node is not an {@link ArrayNode}.
      */
     default ArrayNode toArray() {
         throw new InvalidNodeTypeException("The node cannot be used as a value node.");
@@ -111,7 +111,7 @@ public sealed interface ConfigNode permits ArrayNode, ObjectNode, ValueNode, Nul
     /**
      * Returns the value node variant without casting.
      *
-     * @throws java.security.InvalidParameterException if the node is not a {@link ValueNode}.
+     * @throws InvalidNodeTypeException if the node is not a {@link ValueNode}.
      * @return The {@link ValueNode} representation of this node.
      */
     default ValueNode toValue() {
