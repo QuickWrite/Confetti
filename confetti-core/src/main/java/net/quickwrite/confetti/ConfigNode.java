@@ -7,6 +7,10 @@
 package net.quickwrite.confetti;
 
 import net.quickwrite.confetti.exception.InvalidNodeTypeException;
+import net.quickwrite.confetti.path.NodePath;
+import net.quickwrite.confetti.path.PathSegment;
+
+import java.util.Optional;
 
 /**
  * Base interface for all configuration tree nodes.
@@ -38,6 +42,24 @@ public sealed interface ConfigNode permits ArrayNode, ObjectNode, ValueNode, Nul
      * @return The node type
      */
     NodeType type();
+
+    /**
+     * Returns the key of this specific node.
+     *
+     * <p>
+     * If there is no key (for example if this is the root element),
+     * it will return {@link Optional#empty()}.
+     *
+     * @return Optional with {@link PathSegment} or {@link Optional#empty()}
+     */
+    Optional<PathSegment> key();
+
+    /**
+     * Returns the complete path the current node has.
+     *
+     * @return The complete path
+     */
+    NodePath path();
 
     /**
      * Checks if the node is an {@link ObjectNode}.
