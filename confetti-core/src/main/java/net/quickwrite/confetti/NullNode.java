@@ -12,23 +12,15 @@ package net.quickwrite.confetti;
  * <p>
  * {@code NullNode} models the explicit absence of a value, similar to
  * {@code null} in JSON.
- *
- * <p>
- * This class is final and immutable.
  */
-public final class NullNode implements ConfigNode {
-    /**
-     * Constructs a new {@link NullNode} instance without any parameters.
-     */
-    public NullNode() {}
-
+public non-sealed interface NullNode extends ConfigNode {
     /**
      * Returns the {@link NodeType} of this node.
      *
      * @return {@link NodeType#NULL}
      */
     @Override
-    public NodeType type() {
+    default NodeType type() {
         return NodeType.NULL;
     }
 }

@@ -7,7 +7,11 @@
 package net.quickwrite.confetti;
 
 import net.quickwrite.confetti.exception.InvalidNodeTypeException;
+import net.quickwrite.confetti.path.NodePath;
+import net.quickwrite.confetti.path.PathSegment;
 import org.junit.jupiter.api.Test;
+
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -35,6 +39,16 @@ public class ValueNodeTest {
 
         @Override
         public Object value() {
+            return null;
+        }
+
+        @Override
+        public Optional<PathSegment> key() {
+            return Optional.empty();
+        }
+
+        @Override
+        public NodePath path() {
             return null;
         }
     }

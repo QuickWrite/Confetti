@@ -7,11 +7,14 @@
 package net.quickwrite.confetti;
 
 import net.quickwrite.confetti.exception.InvalidNodeTypeException;
+import net.quickwrite.confetti.path.NodePath;
+import net.quickwrite.confetti.path.PathSegment;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -38,6 +41,16 @@ public class ArrayNodeTest {
         @Override
         public List<ConfigNode> toList() {
             return List.copyOf(delegate);
+        }
+
+        @Override
+        public Optional<PathSegment> key() {
+            return Optional.empty();
+        }
+
+        @Override
+        public NodePath path() {
+            return null;
         }
     }
 
@@ -67,6 +80,16 @@ public class ArrayNodeTest {
         @Override
         public List<ConfigNode> toList() {
             return List.copyOf(delegate);
+        }
+
+        @Override
+        public Optional<PathSegment> key() {
+            return Optional.empty();
+        }
+
+        @Override
+        public NodePath path() {
+            return null;
         }
     }
 

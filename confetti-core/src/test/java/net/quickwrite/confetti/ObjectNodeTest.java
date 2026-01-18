@@ -7,6 +7,8 @@
 package net.quickwrite.confetti;
 
 import net.quickwrite.confetti.exception.InvalidNodeTypeException;
+import net.quickwrite.confetti.path.NodePath;
+import net.quickwrite.confetti.path.PathSegment;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -42,6 +44,16 @@ public class ObjectNodeTest {
         public Map<String, ConfigNode> toMap() {
             return Map.copyOf(delegate);
         }
+
+        @Override
+        public Optional<PathSegment> key() {
+            return Optional.empty();
+        }
+
+        @Override
+        public NodePath path() {
+            return null;
+        }
     }
 
     private static final class CountingObjectNode implements ObjectNode {
@@ -73,6 +85,16 @@ public class ObjectNodeTest {
         @Override
         public Map<String, ConfigNode> toMap() {
             return Map.copyOf(delegate);
+        }
+
+        @Override
+        public Optional<PathSegment> key() {
+            return Optional.empty();
+        }
+
+        @Override
+        public NodePath path() {
+            return null;
         }
     }
 
