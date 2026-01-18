@@ -61,10 +61,24 @@ public class ValueNodeTest {
     }
 
     @Test
+    public void returnTrueIsValue() {
+        ConfigNode node = new SimpleValueNode();
+
+        assertTrue(node.isValue());
+    }
+
+    @Test
     public void returnSelfFromToValue() {
         ValueNode node = new SimpleValueNode();
 
         assertSame(node, node.toValue(), "Default toValue() should return the same instance");
+    }
+
+    @Test
+    public void returnFalseIsObject() {
+        ConfigNode node = new SimpleValueNode();
+
+        assertFalse(node.isObject());
     }
 
     @Test
@@ -75,7 +89,14 @@ public class ValueNodeTest {
     }
 
     @Test
-    public void throwFromToValue() {
+    public void returnFalseIsArray() {
+        ConfigNode node = new SimpleValueNode();
+
+        assertFalse(node.isArray());
+    }
+
+    @Test
+    public void throwFromToArray() {
         ValueNode node = new SimpleValueNode();
 
         assertThrowsExactly(InvalidNodeTypeException.class, node::toArray, "Default toArray() should throw InvalidNodeTypeException.");

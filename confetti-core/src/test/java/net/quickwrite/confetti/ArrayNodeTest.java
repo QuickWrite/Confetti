@@ -185,10 +185,24 @@ public class ArrayNodeTest {
     }
 
     @Test
+    public void returnTrueIsArray() {
+        SimpleArrayNode node = new SimpleArrayNode(List.of());
+
+        assertTrue(node.isArray());
+    }
+
+    @Test
     public void returnSelfFromToArray() {
         SimpleArrayNode node = new SimpleArrayNode(List.of());
 
         assertSame(node, node.toArray(), "Default toArray() should return the same instance");
+    }
+
+    @Test
+    public void returnFalseIsObject() {
+        SimpleArrayNode node = new SimpleArrayNode(List.of());
+
+        assertFalse(node.isObject());
     }
 
     @Test
@@ -199,9 +213,23 @@ public class ArrayNodeTest {
     }
 
     @Test
+    public void returnFalseIsValue() {
+        SimpleArrayNode node = new SimpleArrayNode(List.of());
+
+        assertFalse(node.isValue());
+    }
+
+    @Test
     public void throwFromToValue() {
         SimpleArrayNode node = new SimpleArrayNode(List.of());
 
         assertThrowsExactly(InvalidNodeTypeException.class, node::toValue, "Default toValue() should throw InvalidNodeTypeException.");
+    }
+
+    @Test
+    public void returnFalseIsNull() {
+        SimpleArrayNode node = new SimpleArrayNode(List.of());
+
+        assertFalse(node.isNull());
     }
 }

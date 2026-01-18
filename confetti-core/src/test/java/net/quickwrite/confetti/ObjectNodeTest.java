@@ -188,10 +188,17 @@ public class ObjectNodeTest {
     }
 
     @Test
-    public void returnArrayNodeType() {
+    public void returnObjectNodeType() {
         ConfigNode node = new SimpleObjectNode(Map.of());
 
         assertEquals(NodeType.OBJECT, node.type(), "any ObjectNode implementation should return NodeType.OBJECT from default type()");
+    }
+
+    @Test
+    public void returnFalseIsArray() {
+        ConfigNode node = new SimpleObjectNode(Map.of());
+
+        assertFalse(node.isArray());
     }
 
     @Test
@@ -202,10 +209,24 @@ public class ObjectNodeTest {
     }
 
     @Test
+    public void returnTrueIsObject() {
+        ConfigNode node = new SimpleObjectNode(Map.of());
+
+        assertTrue(node.isObject());
+    }
+
+    @Test
     public void returnSelfFromToObject() {
         ConfigNode node = new SimpleObjectNode(Map.of());
 
         assertSame(node, node.toObject(), "Default toObject() should return the same instance");
+    }
+
+    @Test
+    public void returnFalseIsValue() {
+        ConfigNode node = new SimpleObjectNode(Map.of());
+
+        assertFalse(node.isValue());
     }
 
     @Test
