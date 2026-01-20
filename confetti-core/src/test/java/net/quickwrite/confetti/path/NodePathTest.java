@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 import java.util.Iterator;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class NodePathTest {
     private static final class SimpleNodePath implements NodePath {
         private final List<PathSegment> pathSegments;
@@ -57,13 +59,13 @@ public class NodePathTest {
     public void returnTrueIfPathEmpty() {
         NodePath nodePath = new SimpleNodePath(List.of());
 
-        Assertions.assertTrue(nodePath.isEmpty(), "isEmpty() should return true if there is no path");
+        assertTrue(nodePath.isEmpty(), "isEmpty() should return true if there is no path");
     }
 
     @Test
     public void returnFalseIfPathSome() {
         NodePath nodePath = new SimpleNodePath(List.of(new SimplePathSegment()));
 
-        Assertions.assertFalse(nodePath.isEmpty(), "isEmpty() should return false if there is a path");
+        assertFalse(nodePath.isEmpty(), "isEmpty() should return false if there is a path");
     }
 }

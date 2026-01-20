@@ -11,6 +11,7 @@ import net.quickwrite.confetti.path.NodePath;
 import net.quickwrite.confetti.path.PathSegment;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -54,22 +55,8 @@ public class ValueNodeTest {
     }
 
     @Test
-    public void returnValueNodeType() {
-        ValueNode node = new SimpleValueNode();
-
-        assertEquals(NodeType.VALUE, node.type(), "any ValueNode implementation should return NodeType.VALUE from default type()");
-    }
-
-    @Test
-    public void returnTrueIsValue() {
-        ConfigNode node = new SimpleValueNode();
-
-        assertTrue(node.isValue());
-    }
-
-    @Test
     public void returnSelfFromToValue() {
-        ValueNode node = new SimpleValueNode();
+        ConfigNode node = new SimpleValueNode();
 
         assertSame(node, node.toValue(), "Default toValue() should return the same instance");
     }
@@ -83,7 +70,7 @@ public class ValueNodeTest {
 
     @Test
     public void throwFromToObject() {
-        ValueNode node = new SimpleValueNode();
+        ConfigNode node = new SimpleValueNode();
 
         assertThrowsExactly(InvalidNodeTypeException.class, node::toObject, "Default toObject() should throw InvalidNodeTypeException.");
     }
@@ -97,8 +84,29 @@ public class ValueNodeTest {
 
     @Test
     public void throwFromToArray() {
-        ValueNode node = new SimpleValueNode();
+        ConfigNode node = new SimpleValueNode();
 
         assertThrowsExactly(InvalidNodeTypeException.class, node::toArray, "Default toArray() should throw InvalidNodeTypeException.");
+    }
+
+    @Test
+    public void returnTrueIsValue() {
+        ConfigNode node = new SimpleValueNode();
+
+        assertTrue(node.isValue());
+    }
+
+    @Test
+    public void returnValueNodeType() {
+        ConfigNode node = new SimpleValueNode();
+
+        assertEquals(NodeType.VALUE, node.type(), "any ValueNode implementation should return NodeType.VALUE from default type()");
+    }
+
+    @Test
+    public void returnFalseIsNull() {
+        ConfigNode node = new SimpleValueNode();
+
+        assertFalse(node.isNull());
     }
 }

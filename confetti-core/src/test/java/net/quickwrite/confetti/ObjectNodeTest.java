@@ -195,20 +195,6 @@ public class ObjectNodeTest {
     }
 
     @Test
-    public void returnFalseIsArray() {
-        ConfigNode node = new SimpleObjectNode(Map.of());
-
-        assertFalse(node.isArray());
-    }
-
-    @Test
-    public void throwFromToArray() {
-        ConfigNode node = new SimpleObjectNode(Map.of());
-
-        assertThrowsExactly(InvalidNodeTypeException.class, node::toArray, "Default toArray() should throw InvalidNodeTypeException");
-    }
-
-    @Test
     public void returnTrueIsObject() {
         ConfigNode node = new SimpleObjectNode(Map.of());
 
@@ -223,6 +209,21 @@ public class ObjectNodeTest {
     }
 
     @Test
+    public void returnFalseIsArray() {
+        ConfigNode node = new SimpleObjectNode(Map.of());
+
+        assertFalse(node.isArray());
+    }
+
+    @Test
+    public void throwFromToArray() {
+        ConfigNode node = new SimpleObjectNode(Map.of());
+
+        assertThrowsExactly(InvalidNodeTypeException.class, node::toArray, "Default toArray() should throw InvalidNodeTypeException");
+    }
+
+
+    @Test
     public void returnFalseIsValue() {
         ConfigNode node = new SimpleObjectNode(Map.of());
 
@@ -234,6 +235,13 @@ public class ObjectNodeTest {
         ConfigNode node = new SimpleObjectNode(Map.of());
 
         assertThrowsExactly(InvalidNodeTypeException.class, node::toValue, "Default toValue() should throw InvalidNodeTypeException.");
+    }
+
+    @Test
+    public void returnFalseIsNull() {
+        ConfigNode node = new SimpleObjectNode(Map.of());
+
+        assertFalse(node.isNull());
     }
 }
 
