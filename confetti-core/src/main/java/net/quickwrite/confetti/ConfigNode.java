@@ -26,7 +26,7 @@ import java.util.Optional;
  *   <li>{@link ObjectNode} – key–value mappings</li>
  *   <li>{@link ArrayNode} – ordered collections</li>
  *   <li>{@link ValueNode} – scalar values</li>
- *   <li>{@link NullNode} – explicit {@code null} values</li>
+ *   <li>Explicit {@code null} values</li>
  * </ul>
  *
  * <p>
@@ -35,7 +35,7 @@ import java.util.Optional;
  * {@link #toArray()}. Calling an incompatible accessor may result in
  * a runtime exception.
  */
-public sealed interface ConfigNode permits ArrayNode, ObjectNode, ValueNode, NullNode {
+public sealed interface ConfigNode permits ArrayNode, ObjectNode, ValueNode {
     /**
      * Returns the {@link NodeType} of this node.
      *
