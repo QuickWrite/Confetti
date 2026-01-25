@@ -26,7 +26,7 @@ import java.lang.annotation.*;
  * )
  * class V1toV2Migration implements ConfigMigrator {
  *     @Override
- *     public Config migrate(final Config config) {
+ *     public ConfigNode migrate(final ConfigNode config) {
  *         // code
  *     }
  * }
