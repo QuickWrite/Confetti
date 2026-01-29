@@ -6,6 +6,9 @@
 
 package net.quickwrite.confetti.path;
 
+import net.quickwrite.confetti.path.impl.IndexPathSegment;
+import net.quickwrite.confetti.path.impl.KeyPathSegment;
+
 /**
  * A single segment of a NodePath. A segment is either a key (map/object access)
  * or an index (array access).
@@ -43,4 +46,12 @@ public interface PathSegment {
      * @throws IllegalStateException if called on a key segment
      */
     int index();
+
+    static PathSegment key(final String key) {
+        return new KeyPathSegment(key);
+    }
+
+    static PathSegment index(final int index) {
+        return new IndexPathSegment(index);
+    }
 }

@@ -6,7 +6,6 @@
 
 package net.quickwrite.confetti.path;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Iterator;
@@ -67,5 +66,33 @@ public class NodePathTest {
         NodePath nodePath = new SimpleNodePath(List.of(new SimplePathSegment()));
 
         assertFalse(nodePath.isEmpty(), "isEmpty() should return false if there is a path");
+    }
+
+    @Test
+    public void returnEmptyPathSegment() {
+        NodePath nodePath = NodePath.empty();
+
+        assertTrue(nodePath.isEmpty());
+        assertEquals(List.of(), nodePath.segments());
+    }
+
+    @Test
+    public void appendPathSegmentThrowsIfNull() {
+        NodePath nodePath = NodePath.empty();
+
+        assertThrows(NullPointerException.class, () -> nodePath.appendPathSegment(null));
+    }
+
+    @Test
+    public void appendPathSegmentAppendsToEmpty() {
+        NodePath nodePath = NodePath.empty();
+
+        assertTrue(nodePath.isEmpty());
+
+        NodePath appendedNodePath = nodePath.appendPathSegment(PathSegment.key("test"));
+
+        assertFalse(appendedNodePath.isEmpty());
+        assertEquals(1, appendedNodePath.segments().size());
+        assertEquals("test", appendedNodePath.segments().getFirst().key());
     }
 }
