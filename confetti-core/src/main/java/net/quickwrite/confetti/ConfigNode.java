@@ -35,7 +35,7 @@ import java.util.Optional;
  * {@link #toArray()}. Calling an incompatible accessor may result in
  * a runtime exception.
  */
-public sealed interface ConfigNode permits ArrayNode, ObjectNode, ValueNode, NullNode {
+public sealed interface ConfigNode permits AbstractConfigNode, ArrayNode, ObjectNode, ValueNode {
     /**
      * Returns the {@link NodeType} of this node.
      *

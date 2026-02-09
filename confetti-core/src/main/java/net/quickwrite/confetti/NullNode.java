@@ -6,11 +6,7 @@
 
 package net.quickwrite.confetti;
 
-import net.quickwrite.confetti.path.NodePath;
 import net.quickwrite.confetti.path.PathSegment;
-
-import java.util.Objects;
-import java.util.Optional;
 
 /**
  * A {@link ConfigNode} implementation representing the absence of a value.
@@ -32,33 +28,13 @@ import java.util.Optional;
  *       to avoid {@code null} checks.
  *   </li>
  * </ul>
- *
- * <h2>Parent and key semantics</h2>
- * <ul>
- *   <li>
- *       If constructed without a parent, this node represents a root-level
- *       null value and its {@link #path()} is empty.
- *   </li>
- *   <li>
- *       If constructed with a parent and key, the full path is computed by
- *       appending the key to the parent’s path.
- *   </li>
- * </ul>
  */
-public final class NullNode implements ConfigNode {
-
-    /** Parent node in the configuration tree, or {@code null} if root-level. */
-    private final ConfigNode parent;
-
-    /** The segment that identifies this node within its parent, or {@code null}. */
-    private final PathSegment key;
-
+public final class NullNode extends AbstractConfigNode {
     /**
      * Creates a root-level {@code NullNode} with no parent and no key.
      */
     public NullNode() {
-        this.parent = null;
-        this.key = null;
+        super();
     }
 
     /**
@@ -69,11 +45,7 @@ public final class NullNode implements ConfigNode {
      * @throws NullPointerException if {@code parent} or {@code key} is {@code null}
      */
     public NullNode(final ConfigNode parent, final PathSegment key) {
-        Objects.requireNonNull(parent, "parent must not be null");
-        Objects.requireNonNull(key, "key must not be null");
-
-        this.parent = parent;
-        this.key = key;
+        super(parent, key);
     }
 
     /**
@@ -82,34 +54,5 @@ public final class NullNode implements ConfigNode {
     @Override
     public NodeType type() {
         return NodeType.NULL;
-    }
-
-    /**
-     * Returns the {@link PathSegment} that identifies this node within its parent,
-     * if present.
-     *
-     * @return optional key segment
-     */
-    @Override
-    public Optional<PathSegment> key() {
-        return Optional.ofNullable(this.key);
-    }
-
-    /**
-     * Computes the full {@link NodePath} to this node.
-     * <p>
-     * If this node has no parent, the returned path is empty. Otherwise, the
-     * path is derived by appending this node's key to the parent's path.
-     * </p>
-     *
-     * @return the full path to this node
-     */
-    @Override
-    public NodePath path() {
-        if (parent == null) {
-            return NodePath.empty();
-        }
-
-        return parent.path().appendPathSegment(key);
     }
 }
