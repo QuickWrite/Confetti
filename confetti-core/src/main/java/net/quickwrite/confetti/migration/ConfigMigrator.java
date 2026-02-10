@@ -20,7 +20,7 @@ import net.quickwrite.confetti.ConfigNode;
  * The exact target schema or version is implementation-specific and should be
  * documented by each {@code ConfigMigrator} implementation.
  *
- * <h3>Behavioral contract</h3>
+ * <h2>Behavioral contract</h2>
  * <ul>
  *   <li>
  *       The implementation receives the current configuration via {@code config}
