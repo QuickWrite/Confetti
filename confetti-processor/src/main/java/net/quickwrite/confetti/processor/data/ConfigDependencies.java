@@ -9,6 +9,7 @@ package net.quickwrite.confetti.processor.data;
 import javax.lang.model.element.TypeElement;
 import javax.lang.model.type.TypeMirror;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -51,5 +52,19 @@ class ConfigDependencies {
 
     public TypeElement getBaseTypeElement() {
         return this.baseTypeElement;
+    }
+
+    public Set<TypeMirror> missingTypes() {
+        final Set<TypeMirror> missingTypes = new HashSet<>();
+
+        for (int i = 0; i < this.typeMirrors.size(); ++i) {
+            if (this.available.get(i)) {
+                continue;
+            }
+
+            missingTypes.add(this.typeMirrors.get(i));
+        }
+
+        return missingTypes;
     }
 }

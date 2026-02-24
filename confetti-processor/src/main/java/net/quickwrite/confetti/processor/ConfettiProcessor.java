@@ -15,7 +15,6 @@ import javax.lang.model.type.TypeKind;
 import javax.lang.model.type.TypeMirror;
 import javax.lang.model.util.Elements;
 import javax.lang.model.util.Types;
-import javax.tools.Diagnostic;
 import java.util.*;
 
 @SupportedAnnotationTypes("net.quickwrite.confetti.ConfettiConfig")
@@ -35,9 +34,6 @@ public class ConfettiProcessor extends AbstractProcessor {
         for (final TypeElement annotation : annotations) {
             // Find elements annotated with the custom annotation
             for (final Element element : roundEnv.getElementsAnnotatedWith(annotation)) {
-                // Process each element
-                processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, "Processing: " + element.getSimpleName());
-
                 // TODO: Get type resolvers
 
                 this.processConfettiConfig(element);
@@ -47,10 +43,24 @@ public class ConfettiProcessor extends AbstractProcessor {
         final Collection<TypeElement> finalizedElements = unknownDependencyList.collectKnown();
         // TODO: Do something with those elements
 
+        if (roundEnv.processingOver()) {
+            this.processingEnding();
+        }
+
         return true; // Claim the ConfettiConfigs
     }
 
     private void processConfettiConfig(final Element element) {
+        if (element.getKind() != ElementKind.INTERFACE) {
+            final String message = "Only interfaces can be annotated with @ConfettiConfig\n" +
+                                   "This error appeared when processing " + element + '\n' +
+                                   "Suggestion: Fix by removing @ConfettiConfig from " + element;
+
+            processingEnv.getMessager().printError(message);
+
+            return;
+        }
+
         final Set<TypeMirror> collectedTypes = new HashSet<>();
 
         for (final ExecutableElement instanceMethod : this.getAllInstanceMethods((TypeElement) element, false)) {
@@ -63,6 +73,34 @@ public class ConfettiProcessor extends AbstractProcessor {
         }
 
         unknownDependencyList.addConfigWithDependencies((TypeElement) element, collectedTypes.stream().toList());
+    }
+
+    private void processingEnding() {
+        final Collection<TypeElement> currentConfigs = this.unknownDependencyList.collectCurrentConfigs();
+
+        if (currentConfigs.isEmpty()) {
+            return; // All good!
+        }
+
+        final Set<TypeMirror> missingTypes = this.unknownDependencyList.missingTypes();
+
+        final StringBuilder builder = new StringBuilder();
+        builder.append("Could not resolve all dependencies for all interfaces annotated with @ConfettiConfig.\n")
+                        .append("Affected interfaces:\n");
+        for (final TypeElement typeElement : currentConfigs) {
+            builder.append(" - ").append(typeElement).append('\n');
+        }
+
+        builder.append("Affected types:\n");
+
+        for (final TypeMirror typeMirror : missingTypes) {
+            builder.append(" - ").append(typeMirror).append('\n');
+        }
+
+        builder.append("It is not possible to generate sources with unknown type resolvers.\n")
+                        .append("Suggestion: Fix by adding type resolvers for the listed types.");
+
+        processingEnv.getMessager().printError(builder.toString());
     }
 
     /**

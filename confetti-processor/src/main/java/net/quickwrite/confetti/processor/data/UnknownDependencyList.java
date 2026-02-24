@@ -66,6 +66,10 @@ public class UnknownDependencyList {
         return known.stream().map(ConfigDependencies::getBaseTypeElement).toList();
     }
 
+    public Collection<TypeElement> collectCurrentConfigs() {
+        return this.configDependenciesSet.stream().map(ConfigDependencies::getBaseTypeElement).toList();
+    }
+
     public boolean addConfigWithDependencies(final TypeElement baseTypeElement, final List<TypeMirror> typeMirrors) {
         final ConfigDependencies dependencies = new ConfigDependencies(baseTypeElement, typeMirrors, availableTypes);
 
@@ -74,5 +78,15 @@ public class UnknownDependencyList {
         }
 
         return this.setAvailable(baseTypeElement.asType());
+    }
+
+    public Set<TypeMirror> missingTypes() {
+        final Set<TypeMirror> missingTypes = new HashSet<>();
+
+        for (final ConfigDependencies configDependencies : this.configDependenciesSet) {
+            missingTypes.addAll(configDependencies.missingTypes());
+        }
+
+        return missingTypes;
     }
 }
