@@ -7,6 +7,7 @@
 package net.quickwrite.confetti.processor;
 
 import net.quickwrite.confetti.ConfettiConfig;
+import net.quickwrite.confetti.resolver.ConfettiTypeResolver;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -26,6 +27,6 @@ public class ConfettiProcessorTest {
     public void correctSupportedAnnotationTypes() {
         Set<String> supportedAnnotations = this.confettiProcessor.getSupportedAnnotationTypes();
 
-        assertEquals(Set.of(ConfettiConfig.class.getCanonicalName()), supportedAnnotations);
+        assertEquals(Set.of(ConfettiConfig.class.getCanonicalName(), ConfettiTypeResolver.class.getCanonicalName()), supportedAnnotations);
     }
 }

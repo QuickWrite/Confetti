@@ -6,17 +6,12 @@
 
 package net.quickwrite.confetti.processor;
 
-import net.quickwrite.confetti.ConfettiConfig;
-import net.quickwrite.confetti.resolver.ConfettiTypeResolver;
-
 import javax.annotation.processing.*;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.*;
-import java.lang.annotation.Annotation;
 import java.util.*;
 import java.util.stream.Collectors;
 
-@SupportedAnnotationTypes({"net.quickwrite.confetti.ConfettiConfig","net.quickwrite.confetti.resolver.ConfettiTypeResolver"})
 @SupportedSourceVersion(SourceVersion.RELEASE_21)
 public class ConfettiProcessor extends AbstractProcessor {
     private Collection<SimpleProcessor> processors;
