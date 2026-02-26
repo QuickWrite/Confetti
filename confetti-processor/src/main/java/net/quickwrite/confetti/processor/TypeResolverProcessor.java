@@ -33,6 +33,10 @@ public final class TypeResolverProcessor implements SimpleProcessor {
     @Override
     public void process(final TypeElement annotation, final RoundEnvironment roundEnv) {
         for (final Element element : roundEnv.getElementsAnnotatedWith(annotation)) {
+            if (!checkElement(element)) {
+                continue;
+            }
+
             for(final TypeMirror type: getClassTypedAnnotationValues(
                     element,
                     ConfettiTypeResolver.class.getCanonicalName(),
@@ -54,6 +58,45 @@ public final class TypeResolverProcessor implements SimpleProcessor {
     @Override
     public Class<?> annotation() {
         return ConfettiTypeResolver.class;
+    }
+
+    /**
+     * Checks the provided element and returns if the element should be processed further on.
+     *
+     * @param element The element that should be checked
+     * @return If the element should be processed
+     */
+    private boolean checkElement(final Element element) {
+        if (element.getKind() != ElementKind.CLASS) {
+            processingEnv.getMessager()
+                    .printError(
+                            "The " + element.getKind().toString().toLowerCase() + " " +
+                                    element +
+                                    " can only be a class."
+                    );
+
+            return false;
+        }
+
+        if (isAbstract((TypeElement) element)) {
+            processingEnv.getMessager().printError(
+                    "The class " + element + " cannot be abstract."
+            );
+
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Checks if the provided {@code classElement} is an abstract class.
+     *
+     * @param classElement The provided element
+     * @return {@code true} if the element is abstract
+     */
+    private static boolean isAbstract(final TypeElement classElement) {
+        return classElement.getModifiers().contains(Modifier.ABSTRACT);
     }
 
     /**
