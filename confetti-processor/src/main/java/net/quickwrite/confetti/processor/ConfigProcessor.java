@@ -25,8 +25,8 @@ public final class ConfigProcessor implements SimpleProcessor {
     private final UnknownDependencyList unknownDependencyList;
     private final ProcessingEnvironment processingEnv;
 
-    public ConfigProcessor(final ProcessingEnvironment processingEnv) {
-        this.unknownDependencyList = new UnknownDependencyList();
+    public ConfigProcessor(final UnknownDependencyList unknownDependencyList, final ProcessingEnvironment processingEnv) {
+        this.unknownDependencyList = unknownDependencyList;
         this.processingEnv = processingEnv;
     }
 

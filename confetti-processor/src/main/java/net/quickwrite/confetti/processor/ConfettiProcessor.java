@@ -6,6 +6,8 @@
 
 package net.quickwrite.confetti.processor;
 
+import net.quickwrite.confetti.processor.data.UnknownDependencyList;
+
 import javax.annotation.processing.*;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.*;
@@ -19,9 +21,10 @@ public class ConfettiProcessor extends AbstractProcessor {
     public synchronized void init(final ProcessingEnvironment processingEnv) {
         super.init(processingEnv);
 
+        final UnknownDependencyList dependencyList = new UnknownDependencyList();
         processors = List.of(
-                new ConfigProcessor(processingEnv),
-                new TypeResolverProcessor(processingEnv)
+                new ConfigProcessor(dependencyList, processingEnv),
+                new TypeResolverProcessor(dependencyList,  processingEnv)
         );
     }
 
